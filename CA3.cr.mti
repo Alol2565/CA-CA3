@@ -19,13 +19,6 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	b32regen
 
-} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/mipscpu.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/mipscpu.sv}
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module cpu
-
-Top level modules:
-	cpu
-
 } {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/ctrl.sv} {0 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/ctrl.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module controller1

@@ -2,7 +2,7 @@
 module datapath( input clk ,rst,
                       ALUSrcA,
                       memread, memwrite ,regwrite,
-                      IorD ,IRWrite , PCWrite ,PCWriteCond, 
+                      IorD ,IRWrite , PCWrite ,PCWriteCondbeq, PCWriteCondbne,
               input [1:0] PCSrc, ALUSrcB, ALUOp, 
                     regdst, memtoreg,           
               output [5:0] opcode );
@@ -21,7 +21,7 @@ module datapath( input clk ,rst,
   logic [4:0] wregin;
   logic zero , PCen;
   
-    assign PCen = PCWrite | (zero & PCWriteCond);
+    assign PCen = PCWrite | (zero & PCWriteCondbeq) | (~zero & PCWriteCondbne);
     assign pcin = (PCSrc == 2'b10 ) ? ALUOut : (PCSrc == 2'b01) ? jmppc : ALUResult;
     assign jmppc = {pcout[31:28],inst[25:0],2'b00};
     assign memaddr = IorD ? ALUOut : pcout;
