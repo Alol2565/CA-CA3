@@ -1,9 +1,8 @@
 `timescale 1ns/1ns
 module controller(
-          input [5:0] opcode,opr,
+          input [5:0] opcode,
           input zero, clk, reset,
-          output reg selreg,
-                 alusrcA, alusrcB,
+          output reg alusrcA, alusrcB,
                  memread, memwrite ,regwrite,
                  pc_write, pc_write_condition,
                  IorD,
@@ -12,12 +11,12 @@ module controller(
     
     reg[2:0] PS, NS;
     always@(PS) begin
-      {selreg,regdst,
+      {regdst,
                  alusrcA, alusrcB,
                  memread, memwrite ,regwrite,memtoreg,
                  pcsrc, pc_write, pc_write_condition,
                  IorD,
-                 IR_write} = 13'b0; /// chnege
+                 IR_write} = 16'b0;
       NS = 0;
       case(PS)
         6'b000000:begin //IF
@@ -66,6 +65,9 @@ module controller(
             6'b000011:begin //jal
                      pcsrc = 2'b01;
                      pc_write = 1'b1;
+                     regwrite = 1'b1;
+                     regdst = 2'b10; //s1
+                     memtoreg = 2'b10; // s2
                      NS = 6'b0;
             end
             6'b000000:begin //rtype
@@ -77,13 +79,13 @@ module controller(
             6'b001000:begin //addi    
                     alusrcA = 1'b1;
                     alusrcB = 2'b01;
-                    toaluctrl = 2'b10;
+                    toaluctrl = 2'b00;
                     NS = 6'b000011;
             end  
             6'b001100:begin //andi
                     alusrcA = 1'b1;
                     alusrcB = 2'b01;
-                    toaluctrl = 2'b10;
+                    toaluctrl = 2'b11;
                     NS = 6'b000011;
             end
             6'b100011:begin //lw
@@ -103,23 +105,23 @@ module controller(
        6'b000011: begin 
               case(opcode)
 
-              6'b000000:begin //rtype
-                     regdst = 2'b01; /////////????????
+              6'b000000:begin //rtypeb
+                     regdst = 2'b01; 
                      regwrite = 1'b1;
-                     memtoreg = 2'b00; /////// ????????
+                     memtoreg = 2'b00; 
                      NS = 6'b0;
               end
 
               6'b001000:begin //addi    
-                    regdst = 2'b01; ///////////// 
+                    regdst = 2'b01;
                     regwrite = 1'b1;
-                    memtoreg = 2'b00; ////////////// 
+                    memtoreg = 2'b00; 
                     NS = 6'b0;
               end 
               6'b001100:begin //andi
-                    regdst = 2'b01; ///////////// 
+                    regdst = 2'b01;=
                     regwrite = 1'b1;
-                    memtoreg = 2'b00; ////////////// 
+                    memtoreg = 2'b00; 
                     NS = 6'b0;
 
               end
