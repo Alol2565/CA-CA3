@@ -15,7 +15,7 @@ module cpu( input clk ,rst);
               
   
 
-controller CU(opcode, zero, clk, reset, alusrcA, memread, memwrite ,regwrite, pc_write, pc_write_condition_beq, pc_write_condition_bne, IorD, IR_write, alusrcB,toaluctrl, pcsrc, regdst,memtoreg );
+controller CU(opcode, zero, clk, rst, alusrcA, memread, memwrite ,regwrite, pc_write, pc_write_condition_beq, pc_write_condition_bne, IorD, IR_write, alusrcB,toaluctrl, pcsrc, regdst,memtoreg );
 datapath DP(clk ,rst, alusrcA, memread, memwrite ,regwrite,IorD, IR_write, pc_write, pc_write_condition_beq, pc_write_condition_bne, pcsrc, alusrcB, toaluctrl, regdst,memtoreg, opcode);          
 
 

@@ -12,7 +12,7 @@ module controller1(
           
   reg[5:0] PS, NS;
 
-   always @(posedge clk)
+   always @(posedge clk , posedge reset)
     begin
       if(reset)
         PS <= 6'b000000;
@@ -42,5 +42,7 @@ module controller1(
           end      
           6'b000001:begin //ID
           alusrcA = 1'b0; alusrcB = 2'b11; toaluctrl = 2'b00;
-          NS = 6'b000010;
+              	
+          
+  
           end 
