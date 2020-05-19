@@ -7,8 +7,8 @@ work
 transcript
 *.bak
 work
-ca3.mpf
-ca3.cr.mti
+*.mpf
+*.cr.mti
 *.v.bak
 *.wlf
 *.mpf
