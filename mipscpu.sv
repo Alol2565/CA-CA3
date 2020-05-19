@@ -12,6 +12,6 @@ module cpu( input clk ,rst);
         wire [5:0] opcode ,opr;  
               
 datapath DP( clk ,rst,selreg,regdst,alusrc,memread, memwrite ,regwrite,memtoreg,pcsrc, jal, jr,jmp,aluopration,opcode ,opr,zero);
-controller CU(opcode,opr,zero, selreg,regdst,alusrc,memread, memwrite ,regwrite,memtoreg,pcsrc, jal, jr,jmp,toaluctrl );
-aluctrl ALUCU(opr,toaluctrl, aluopration );          
+controller CU(opcode,opr,zero, selreg,regdst,alusrc,memread, memwrite ,regwrite,memtoreg,pcsrc, jal, jr,jmp,toaluctrl );         
+
 endmodule
