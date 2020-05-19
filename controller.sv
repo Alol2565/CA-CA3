@@ -159,7 +159,7 @@ module controller(
      
     always @(posedge clk , posedge reset)
     begin
-      if(reset == 1'b1)
+      if(reset)
         PS <= 6'b0;
       else 
         PS <= NS;

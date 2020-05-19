@@ -20,7 +20,7 @@ end
 
   initial begin
    rst =  1;
-   #45
+   #15
    rst = 0;
   // #30
   // RegWrite = 1;

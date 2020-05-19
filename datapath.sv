@@ -22,13 +22,15 @@ module datapath( input clk ,rst,
   logic zero , PCen;
   
     assign PCen = PCWrite | (zero & PCWriteCondbeq) | (~zero & PCWriteCondbne);
-    assign pcin = (PCSrc == 2'b10 ) ? ALUOut : (PCSrc == 2'b01) ? jmppc : ALUResult;
+    assign pcin = (PCSrc == 2'b10 ) ? ALUOut : (PCSrc == 2'b01) ? jmppc : ALUResult ;
+    //assign pcin = ALUResult;
     assign jmppc = {pcout[31:28],inst[25:0],2'b00};
     assign memaddr = IorD ? ALUOut : pcout;
     assign wregin = (regdst == 2'b10) ? n31 : (regdst == 2'b01) ? inst[15:11] : inst[20:16];
     assign wregd = (memtoreg == 2'b10) ? pcout : (memtoreg == 2'b01) ? MDRout : ALUOut;
     assign ALUa = ALUSrcA ? Aout : pcout;
-    assign AlUb = (ALUSrcB == 2'b11) ? seoutshift : (ALUSrcB == 2'b10) ? seout : (ALUSrcB == 2'b01) ? n4 : Bout;
+    assign ALUb = (ALUSrcB == 2'b11) ? seoutshift : (ALUSrcB == 2'b10) ? seout : (ALUSrcB == 2'b01) ? n4 : Bout;
+    //assign ALUb = n4;
     assign seoutshift = seout << 2;
     
     b32regen PC(pcin , clk, rst , PCen, pcout);
@@ -38,7 +40,7 @@ module datapath( input clk ,rst,
     RegisterFile RF(clk,rst,regwrite, inst[25:21],inst[20:16],wregin, wregd, Ain,Bin);
     b32reg A(Ain,clk, rst, Aout);
     b32reg B(Bin,clk, rst, Bout);
-    alu ALU(ALUa ,Alub ,aluopration, aluout ,zero);
+    alu ALU(ALUa ,ALUb ,aluopration, ALUResult ,zero);
     se16to32 SE(inst[15:0], seout);
     b32reg ALUout(ALUResult,clk, rst, ALUOut);
     aluctrl ALUCU(inst[5:0],ALUOp, aluopration);
