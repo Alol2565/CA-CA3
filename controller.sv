@@ -8,7 +8,7 @@ module controller(
                  pc_write, pc_write_condition,
                  IorD,
                  IR_write,  
-          output reg[1:0] toaluctrl, pc_src,regdst,memtoreg );
+          output reg[1:0] toaluctrl, pcsrc,regdst,memtoreg );
     
     reg[2:0] PS, NS;
     always@(PS) begin
@@ -21,7 +21,14 @@ module controller(
       NS = 0;
       case(PS)
         6'b000000:begin //IF
-          memread = 1;alusrcA = 0; IorD = 0; IR_write = 1; alusrcB = 2'b01; toaluctrl = 2'b00; pc_write = 1'b1; pcsrc = 2'b00;
+          memread = 1;
+          alusrcA = 0;
+           IorD = 0;
+            IR_write = 1; 
+            alusrcB = 2'b01; 
+            toaluctrl = 2'b00; 
+            pc_write = 1'b1; 
+            pcsrc = 2'b00;
           NS = 6'b000001;
           end
         6'b000001:begin //ID
@@ -47,17 +54,17 @@ module controller(
                      alusrcA = 1'b1;
                      alusrcB = 2'b00;
                      pc_write_condition = 1'b1;
-                     pc_src = 2'b01;
+                     pcsrc = 2'b01;
 		       toaluctrl = 2'b01; 
 		       NS = 6'b000000;
             end
             6'b000001:begin //jr
-                     pc_src = 2'b10;// ?????????????????????//
+                     pcsrc = 2'b10;// ?????????????????????//
                      pc_write = 1'b1;
                      NS = 6'b0;
             end
             6'b000011:begin //jal
-                     pc_src = 2'b01;
+                     pcsrc = 2'b01;
                      pc_write = 1'b1;
                      NS = 6'b0;
             end
@@ -132,7 +139,7 @@ module controller(
        6'b000100: begin 
          case(opcode)
          6'b100011:begin //lw
-              regdst = 2'b00
+              regdst = 2'b00;
               regwrite = 1'b1;
               memtoreg = 2'b01;
               NS = 6'b0;
@@ -146,9 +153,9 @@ module controller(
     always @(posedge clk)
     begin
       if(reset == 1'b1)
-        ps <= 3'b000;
+        PS <= 6'b0;
       else 
-        ps <= ns;
+        PS <= NS;
     end
     
 endmodule
