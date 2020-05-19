@@ -39,12 +39,12 @@ module controller(
           case(opcode)
             6'b000010:begin //j
                 pc_write = 1'b1;
-                pcsrc = 2'b10;
+                pcsrc = 2'b01;
                 NS = 6'b000000;
             end 
             6'b000100:begin //beq
                      alusrcA = 1'b1;
-                     pcsrc = 2'b01;
+                     pcsrc = 2'b01;  ///??????????
                      pc_write_condition_beq = 1'b1;
                      toaluctrl = 2'b01;
                      alusrcB = 2'b00;
@@ -54,9 +54,9 @@ module controller(
                      alusrcA = 1'b1;
                      alusrcB = 2'b00;
                      pc_write_condition_bne = 1'b1;
-                     pcsrc = 2'b01;
-		       toaluctrl = 2'b01; 
-		       NS = 6'b000000;
+                     pcsrc = 2'b01; /////////
+		                 toaluctrl = 2'b01; 
+		                 NS = 6'b000000;
             end
             6'b000001:begin //jr
                      pcsrc = 2'b10;// ?????????????????????//
