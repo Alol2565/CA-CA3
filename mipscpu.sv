@@ -2,16 +2,22 @@
 module cpu( input clk ,rst);
                       
                       
-        wire selreg,regdst,
-              alusrc,
-              memread, memwrite ,regwrite,memtoreg,
-                      pcsrc, jal, jr,jmp,
-                      zero;
-        wire [1:0] toaluctrl    ;       
+        wire  alusrcA,
+              memread, memwrite ,regwrite,
+              pc_write, pc_write_condition,
+              IorD,IR_write,
+              zero;
+              
+        wire [1:0] toaluctrl,alusrcB,pcsrc,
+                    regdst,memtoreg;        
         wire [2:0] aluopration;       
         wire [5:0] opcode ,opr;  
               
-datapath DP( clk ,rst,selreg,regdst,alusrc,memread, memwrite ,regwrite,memtoreg,pcsrc, jal, jr,jmp,aluopration,opcode ,opr,zero);
-controller CU(opcode,opr,zero, selreg,regdst,alusrc,memread, memwrite ,regwrite,memtoreg,pcsrc, jal, jr,jmp,toaluctrl );         
+  
+
+controller CU(opcode, zero, clk, reset, alusrcA, memread, memwrite ,regwrite, pc_write, pc_write_condition, IorD, IR_write, alusrcB,toaluctrl, pcsrc, regdst,memtoreg );
+datapath DP(clk ,rst, alusrcA, memread, memwrite ,regwrite,IorD, IR_write, pc_write, pc_write_condition, pcsrc, alusrcB, toaluctrl, regdst,memtoreg, opcode);          
+
+
 
 endmodule

@@ -1,11 +1,10 @@
 `timescale 1ns/1ns
 module datapath( input clk ,rst,
-                      regsel ,regdst,
                       ALUSrcA,
                       memread, memwrite ,regwrite,
-                      memtoreg,jal,
                       IorD ,IRWrite , PCWrite ,PCWriteCond, 
-              input [1:0] PCSrc, ALUSrcB, ALUOp,             
+              input [1:0] PCSrc, ALUSrcB, ALUOp, 
+                    regdst, memtoreg,           
               output [5:0] opcode );
   
   logic [4:0] n31 = 5'd31;
@@ -26,8 +25,8 @@ module datapath( input clk ,rst,
     assign pcin = (PCSrc == 2'b10 ) ? ALUOut : (PCSrc == 2'b01) ? jmppc : ALUResult;
     assign jmppc = {pcout[31:28],inst[25:0],2'b00};
     assign memaddr = IorD ? ALUOut : pcout;
-    assign wregin = regsel ? n31 : regdst ? inst[15:11] : inst[20:16];
-    assign wregd = jal ? pcout : memtoreg ? MDRout : ALUOut;
+    assign wregin = (regdst == 2'b10) ? n31 : (regdst == 2'b01) ? inst[15:11] : inst[20:16];
+    assign wregd = (memtoreg == 2'b10) ? pcout : (memtoreg == 2'b01) ? MDRout : ALUOut;
     assign ALUa = ALUSrcA ? Aout : pcout;
     assign AlUb = (ALUSrcB == 2'b11) ? seoutshift : (ALUSrcB == 2'b10) ? seout : (ALUSrcB == 2'b01) ? n4 : Bout;
     assign seoutshift = seout << 2;

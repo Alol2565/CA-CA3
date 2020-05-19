@@ -5,19 +5,38 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	aluctrl
 
-} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/alu.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/alu.sv}
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module alu
-
-Top level modules:
-	alu
-
-} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/datapath.sv} {1 {vlog -work work -sv {E:\daneshgah\term 6\Computer Architecture\CA3\CA-CA3\datapath.sv}
+} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/datapath.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/datapath.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module datapath
 
 Top level modules:
 	datapath
+
+} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/32bregen.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/32bregen.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module b32regen
+
+Top level modules:
+	b32regen
+
+} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/mipscpu.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/mipscpu.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module cpu
+
+Top level modules:
+	cpu
+
+} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/ctrl.sv} {0 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/ctrl.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module controller1
+** Error: E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/ctrl.sv(30): near "EOF": syntax error, unexpected end of source code
+
+} {4.0 5.0} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/RegisterFile.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/RegisterFile.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
 
 } {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/SE16to32.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/SE16to32.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -26,20 +45,6 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	se16to32
 
-} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/datamemory.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/datamemory.sv}
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module datamem
-
-Top level modules:
-	datamem
-
-} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/32bregen.sv} {1 {vlog -work work -sv {E:\daneshgah\term 6\Computer Architecture\CA3\CA-CA3\32bregen.sv}
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module b32regen
-
-Top level modules:
-	b32regen
-
 } {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/test.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/test.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module tb
@@ -47,25 +52,25 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	tb
 
-} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/32bregister.sv} {1 {vlog -work work -sv {E:\daneshgah\term 6\Computer Architecture\CA3\CA-CA3\32bregister.sv}
+} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/alu.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/alu.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/datamemory.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/datamemory.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module datamem
+
+Top level modules:
+	datamem
+
+} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/32bregister.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/32bregister.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module b32reg
 
 Top level modules:
 	b32reg
-
-} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/RegisterFile.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/RegisterFile.sv}
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module RegisterFile
-
-Top level modules:
-	RegisterFile
-
-} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/mipscpu.sv} {1 {vlog -work work -sv {E:\daneshgah\term 6\Computer Architecture\CA3\CA-CA3\mipscpu.sv}
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module cpu
-
-Top level modules:
-	cpu
 
 } {} {}}

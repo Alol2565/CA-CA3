@@ -14,13 +14,13 @@ module tb();
   
 end
   always
-    #50 clk = !clk;
+    #10 clk = !clk;
   cpu uut(clk, rst);
  // RegisterFile uut(clk,rst,RegWrite,ReadReg1,ReadReg2,WriteReg, WriteData,ReadData1,ReadData2);
 
   initial begin
    rst =  1;
-   #120
+   #45
    rst = 0;
   // #30
   // RegWrite = 1;

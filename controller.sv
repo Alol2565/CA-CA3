@@ -2,33 +2,34 @@
 module controller(
           input [5:0] opcode,
           input zero, clk, reset,
-          output reg alusrcA, alusrcB,
+          output reg alusrcA, 
                  memread, memwrite ,regwrite,
                  pc_write, pc_write_condition,
                  IorD,
                  IR_write,  
-          output reg[1:0] toaluctrl, pcsrc,regdst,memtoreg );
+          output reg[1:0] alusrcB, toaluctrl, pcsrc,regdst,memtoreg );
     
-    reg[2:0] PS, NS;
-    always@(PS) begin
-      {regdst,
+    reg[5:0] PS, NS;
+    always@(posedge clk ,posedge reset) begin
+                 {regdst,
                  alusrcA, alusrcB,
                  memread, memwrite ,regwrite,memtoreg,
                  pcsrc, pc_write, pc_write_condition,
                  IorD,
                  IR_write} = 16'b0;
-      NS = 0;
+      NS = 6'b00000;
+  
       case(PS)
         6'b000000:begin //IF
-          memread = 1;
-          alusrcA = 0;
-           IorD = 0;
+            memread = 1;
+            alusrcA = 0;
+            IorD = 0;
             IR_write = 1; 
             alusrcB = 2'b01; 
             toaluctrl = 2'b00; 
             pc_write = 1'b1; 
             pcsrc = 2'b00;
-          NS = 6'b000001;
+            NS = 6'b000001;
           end
         6'b000001:begin //ID
           alusrcA = 1'b0; alusrcB = 2'b11; toaluctrl = 2'b00;
@@ -91,7 +92,7 @@ module controller(
             6'b100011:begin //lw
                     alusrcA = 1'b1;
                     alusrcB = 2'b10;
-                    toaluctrl = 2'b00;
+                    toaluctrl = 2'b00; 
                     NS = 6'b000011;
             end
             6'b101011:begin //sw
@@ -119,7 +120,7 @@ module controller(
                     NS = 6'b0;
               end 
               6'b001100:begin //andi
-                    regdst = 2'b01;=
+                    regdst = 2'b01;
                     regwrite = 1'b1;
                     memtoreg = 2'b00; 
                     NS = 6'b0;
