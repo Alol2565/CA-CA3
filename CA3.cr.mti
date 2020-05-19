@@ -1,4 +1,11 @@
-{E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/alucontroller.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/alucontroller.sv}
+C:/Users/Alol/Documents/GitHub/CA-CA3/datamemory.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/datamemory.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module datamem
+
+Top level modules:
+	datamem
+
+} {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/alucontroller.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/alucontroller.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module aluctrl
 
@@ -26,6 +33,27 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	cpu
 
+} {} {}} C:/Users/Alol/Documents/GitHub/CA-CA3/datapath.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/datapath.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module datapath
+
+Top level modules:
+	datapath
+
+} {} {}} C:/Users/Alol/Documents/GitHub/CA-CA3/32bregen.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/32bregen.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module b32regen
+
+Top level modules:
+	b32regen
+
+} {} {}} C:/Users/Alol/Documents/GitHub/CA-CA3/alu.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/alu.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
 } {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/ctrl.sv} {0 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/ctrl.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module controller1
@@ -38,12 +66,33 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	RegisterFile
 
+} {} {}} C:/Users/Alol/Documents/GitHub/CA-CA3/controller.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/controller.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module controller
+
+Top level modules:
+	controller
+
+} {} {}} C:/Users/Alol/Documents/GitHub/CA-CA3/32bregister.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/32bregister.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module b32reg
+
+Top level modules:
+	b32reg
+
 } {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/SE16to32.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/SE16to32.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module se16to32
 
 Top level modules:
 	se16to32
+
+} {} {}} C:/Users/Alol/Documents/GitHub/CA-CA3/RegisterFile.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/RegisterFile.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
 
 } {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/test.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/test.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -52,6 +101,20 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	tb
 
+} {} {}} C:/Users/Alol/Documents/GitHub/CA-CA3/alucontroller.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/alucontroller.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module aluctrl
+
+Top level modules:
+	aluctrl
+
+} {} {}} C:/Users/Alol/Documents/GitHub/CA-CA3/SE16to32.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/SE16to32.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module se16to32
+
+Top level modules:
+	se16to32
+
 } {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/alu.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/alu.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module alu
@@ -59,12 +122,26 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	alu
 
+} {} {}} C:/Users/Alol/Documents/GitHub/CA-CA3/test.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/test.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module tb
+
+Top level modules:
+	tb
+
 } {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/datamemory.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/datamemory.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module datamem
 
 Top level modules:
 	datamem
+
+} {} {}} C:/Users/Alol/Documents/GitHub/CA-CA3/mipscpu.sv {1 {vlog -work work -sv C:/Users/Alol/Documents/GitHub/CA-CA3/mipscpu.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module cpu
+
+Top level modules:
+	cpu
 
 } {} {}} {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/32bregister.sv} {1 {vlog -work work -sv {E:/daneshgah/term 6/Computer Architecture/CA3/CA-CA3/32bregister.sv}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
