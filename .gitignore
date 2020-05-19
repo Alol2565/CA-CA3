@@ -25,3 +25,5 @@ wlft79kw0h
 vsim.wlf
 *.~vsdx
 >>>>>>> 06403db2ae6d81268d763b4662ab7204a18198dc
+*.bak
+32bregen.sv.bak
