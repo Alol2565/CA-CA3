@@ -4,7 +4,7 @@ module controller(
           input zero, clk, reset,
           output reg alusrcA, 
                  memread, memwrite ,regwrite,
-                 pc_write, pc_write_condition,
+                 pc_write, pc_write_condition_beq, pc_write_condition_bne,
                  IorD,
                  IR_write,  
           output reg[1:0] alusrcB, toaluctrl, pcsrc,regdst,memtoreg );
@@ -14,9 +14,9 @@ module controller(
                  {regdst,
                  alusrcA, alusrcB,
                  memread, memwrite ,regwrite,memtoreg,
-                 pcsrc, pc_write, pc_write_condition,
+                 pcsrc, pc_write, pc_write_condition_beq, pc_write_condition_bne,
                  IorD,
-                 IR_write} = 16'b0;
+                 IR_write} = 17'b0;
       NS = 6'b00000;
   
       case(PS)
@@ -45,7 +45,7 @@ module controller(
             6'b000100:begin //beq
                      alusrcA = 1'b1;
                      pcsrc = 2'b01;
-                     pc_write_condition = 1'b1;
+                     pc_write_condition_beq = 1'b1;
                      toaluctrl = 2'b01;
                      alusrcB = 2'b00;
                      NS = 6'b000000;
@@ -53,7 +53,7 @@ module controller(
             6'b000101:begin //bne
                      alusrcA = 1'b1;
                      alusrcB = 2'b00;
-                     pc_write_condition = 1'b1;
+                     pc_write_condition_bne = 1'b1;
                      pcsrc = 2'b01;
 		       toaluctrl = 2'b01; 
 		       NS = 6'b000000;
