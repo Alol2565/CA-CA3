@@ -117,11 +117,27 @@ module controller(
 
               end
               6'b100011:begin //lw
-
+                    memread = 1'b1;
+                    IorD = 1'b1;
+                    NS = 6'b000100;
             end
               6'b101011:begin //sw
-            
+                    memwrite = 1'b1;
+                    IorD = 1'b1;
+                    NS = 6'b0; 
+
             end
+              endcase
+       end
+       6'b000100: begin 
+         case(opcode)
+         6'b100011:begin //lw
+              regdst = 2'b00
+              regwrite = 1'b1;
+              memtoreg = 2'b01;
+              NS = 6'b0;
+            end
+         endcase
        end
       endcase
     end
